@@ -2,7 +2,8 @@
 # M6-ANGULAR-RETO
 # Reto: Aplicación de Gestión de Cuentas Bancarias con Angular
 > **Larry M. Ramírez - Coach Técnico**
->  **Jacobo Garcés - Coach Técnico**
+
+> **Jacobo Garcés - Coach Técnico**
 
 ## Objetivo.
 Crear una aplicación Angular 16 que sirva como portal de usuario para el sistema de gestión de cuentas bancarias. La aplicación debe consumir el servicio de back-end (desarrollado en el módulo Spring Boot) para mostrar y actualizar la información de las cuentas, permitiendo a los usuarios consultar saldos, ver el historial de transacciones y realizar operaciones bancarias.
