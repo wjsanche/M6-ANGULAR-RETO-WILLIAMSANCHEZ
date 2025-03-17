@@ -21,6 +21,7 @@ Crear una aplicación Angular 16 que sirva como portal de usuario para el sistem
 -   Configurar **Lazy Loading** para cargar módulos de forma diferida y optimizar el rendimiento.
 
 3. **Interfaz de Usuario:**
+-   Defiinir una **landing page** que sirva como punto de acceso principal a la aplicación.
 -   Crear componentes reutilizables para mostrar información clave, como:
     -   Tarjetas o "cards" para representar el estado de una cuenta.
     -   Listados de transacciones.
