@@ -39,4 +39,4 @@ Crear una aplicación Angular 16 que sirva como portal de usuario para el sistem
 -   Implementar un mecanismo para gestionar el estado de autenticación y los datos de la cuenta a lo largo de la aplicación.
 -   Permitir que, al actualizar una operación, la información se refleje inmediatamente en la interfaz.
 
-**Nota:** Al igual que los talleres, el reto debe entregarse por medio de la estrategia establecida para la formación, por medio de un Pull Request desde el repositorio Fork hacia la rama main del repositorio del reto.
+**Nota:** este reto debe entregarse por medio de una presentación de máximo 5 minutos durante la sesión del dia 27 de marzo de 2025. Como es costumbre, es necesario el un Pull Request correspondiente desde el repositorio Fork hacia la rama main del repositorio del reto.
