@@ -1,0 +1,112 @@
+<div class="container mt-5">
+  <!-- Encabezado del Banco -->
+  <div class="bank-header text-center mb-4">
+    <img src="assets/logo.png" alt="Logo del Banco" class="bank-logo">
+    <h1 class="bank-name">MiApp</h1>
+    <p class="bank-slogan">Tu banco confiable</p>
+  </div>
+
+  <!-- Tarjeta de gestión de cuenta -->
+  <div class="card shadow-lg p-4">
+    <h3 class="text-center text-primary mb-4">Gestión de Cuenta Bancaria</h3>
+
+    <div class="row">
+      <!-- Ingreso del ID de la cuenta -->
+      <div class="col-md-6 mb-3">
+        <label for="cuentaId" class="form-label">ID de Cuenta:</label>
+        <input type="number" [(ngModel)]="cuentaId" class="form-control" id="cuentaId" placeholder="Ingrese el ID de la cuenta">
+      </div>
+
+      <!-- Campo para el monto -->
+      <div class="col-md-6 mb-3">
+        <label for="monto" class="form-label">Monto:</label>
+        <input type="number" [(ngModel)]="monto" class="form-control" id="monto" placeholder="Ingrese el monto">
+      </div>
+    </div>
+
+    <!-- Botones de acciones -->
+    <div class="d-flex justify-content-center gap-3">
+      <button class="btn btn-primary" (click)="obtenerSaldo()">Consultar Saldo</button>
+      <button class="btn btn-success" (click)="depositar()">Depositar</button>
+      <button class="btn btn-danger" (click)="retirar()">Retirar</button>
+    </div>
+
+    <!-- Resultado de la consulta -->
+    <div class="mt-4 text-center">
+      <h4 *ngIf="saldo !== null" class="text-success">Saldo disponible: ${{ saldo | number }}</h4>
+      <p *ngIf="mensaje" class="text-danger">{{ mensaje }}</p>
+    </div>
+  </div>
+
+  <!-- Sección de búsqueda de transacciones -->
+  <div class="card shadow-lg p-4 mt-4">
+    <h4 class="text-center text-primary">Consulta de Transacciones</h4>
+
+    <div class="input-group mb-3">
+      <input type="number" [(ngModel)]="cuentaIdTransacciones" id="cuentaIdTransacciones" class="form-control" placeholder="Ingrese el ID">
+      <button class="btn btn-primary" (click)="buscarTransacciones()">Buscar</button>
+      <button class="btn btn-secondary" (click)="limpiarBusqueda()">Limpiar</button>
+    </div>
+
+    <!-- Tabla de transacciones -->
+    <div class="table-responsive" *ngIf="transacciones.length > 0">
+      <table class="table table-striped text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Monto</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaccion of transacciones">
+            <td>{{ transaccion.id }}</td>
+            <td>{{ transaccion.tipo }}</td>
+            <td>{{ transaccion.monto | currency }}</td>
+            <td>{{ transaccion.fecha | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bank-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .bank-logo {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .bank-name {
+    font-weight: bold;
+    font-size: 28px;
+    color: #0056b3;
+  }
+
+  .bank-slogan {
+    font-size: 16px;
+    color: #777;
+  }
+
+  .card {
+    border-radius: 10px;
+    background: #f8f9fa;
+  }
+
+  .btn {
+    min-width: 120px;
+  }
+
+  .table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+</style>
